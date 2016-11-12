@@ -30,5 +30,5 @@ if __name__ == '__main__':
     parser.add_argument("y", type=int, help="the exponent")
     args = parser.parse_args()
     #print (args)
-
+    print (argv)
     main (args)
