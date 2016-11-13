@@ -50,7 +50,7 @@ def train():
 
   with tf.name_scope('input_reshape'):
     image_shaped_input = tf.reshape(x, [-1, 28, 28, 1])
-    tf.image_summary('input', image_shaped_input, 10)
+    tf.image_summary('input', image_shaped_input, 20)
 
   # We can't initialize these variables to 0 - the network will get stuck.
   def weight_variable(shape):
