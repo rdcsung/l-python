@@ -71,9 +71,10 @@ def main(_):
   tf.initialize_all_variables().run()
   for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
-    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+    _, loss_value = sess.run([train_step,loss ], 
+              feed_dict={x: batch_xs, y_: batch_ys})
     if i % 100 == 0:
-        print ('print loss in the future')
+        print ('Step %d : Loss = %.2f' % (i,loss_value))
 
   # Test trained model
   correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
